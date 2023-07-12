@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewBag.Title = "Zone";
+    Layout = "~/Views/Shared/myLayout.cshtml";
+}
+
+<section class="main-wrapper">
+    <section class="inner-main-wrapper">
+        @{
+            Html.RenderPartial("~/Views/Shared/_Navbar.cshtml");
+        }
+        <div class="main-right-section">
+            <div class="header-right-section">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="toggle-div">
+                            <!-- <div class="toggle-btn"><i class="fa fa-bars"></i></div> -->
+                            <h1>Zone</h1>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- <figure>
+                            <img src="assets/images/fake-user.png" alt="">
+                            <figcaption></figcaption>
+                        </figure> -->
+                        <div class="navigation">
+                            <div class="user-box">
+                                <div class="image-box">
+                                    <img src="assets/images/oldMan.jpg" alt="avatar">
+                                </div>
+                                <p class="username">User Name</p>
+                            </div>
+                            <div class="menu-toggle"></div>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <ion-icon name="person-outline"></ion-icon>Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ion-icon name="chatbox-outline"></ion-icon>Messages
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ion-icon name="notifications-outline"></ion-icon>Notification
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ion-icon name="cog-outline"></ion-icon>
+                                        </ion-icon>Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ion-icon name="log-out-outline"></ion-icon>Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-right-section">
+                <a class="btn btn-primary" href="@Url.Action("New", "zone")" role="button">Create</a>
+                <div class="row">
+                    <div id="grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="~/Scripts/myScripts/devExhelper.js"></script>
+<script src="~/Scripts/myScripts/fin_common.js"></script>
+
+<script>
+
+    $(document).ready(function (e) {
+
+        zone.loadGrid();
+
+    })
+
+    let data = [{
+        "ID": 1,
+        "CompanyName": "Premier Buy",
+        "Address": "7601 Penn Avenue South",
+        "City": "Richfield",
+        "State": "Minnesota",
+        "Zipcode": 55423,
+        "Phone": "(612) 291-1000",
+        "Fax": "(612) 291-2001",
+        "Website": "http://www.nowebsitepremierbuy.com"
+    }, {
+        "ID": 2,
+        "CompanyName": "ElectrixMax",
+        "Address": "263 Shuman Blvd",
+        "City": "Naperville",
+        "State": "Illinois",
+        "Zipcode": 60563,
+        "Phone": "(630) 438-7800",
+        "Fax": "(630) 438-7801",
+        "Website": "http://www.nowebsiteelectrixmax.com"
+    }, {
+        "ID": 3,
+        "CompanyName": "Video Emporium",
+        "Address": "1201 Elm Street",
+        "City": "Dallas",
+        "State": "Texas",
+        "Zipcode": 75270,
+        "Phone": "(214) 854-3000",
+        "Fax": "(214) 854-3001",
+        "Website": "http://www.nowebsitevideoemporium.com"
+    }, {
+        "ID": 4,
+        "CompanyName": "Screen Shop",
+        "Address": "1000 Lowes Blvd",
+        "City": "Mooresville",
+        "State": "North Carolina",
+        "Zipcode": 28117,
+        "Phone": "(800) 445-6937",
+        "Fax": "(800) 445-6938",
+        "Website": "http://www.nowebsitescreenshop.com"
+    }, {
+        "ID": 5,
+        "CompanyName": "Braeburn",
+        "Address": "1 Infinite Loop",
+        "City": "Cupertino",
+        "State": "California",
+        "Zipcode": 95014,
+        "Phone": "(408) 996-1010",
+        "Fax": "(408) 996-1012",
+        "Website": "http://www.nowebsitebraeburn.com"
+    }, {
+        "ID": 6,
+        "CompanyName": "PriceCo",
+        "Address": "30 Hunter Lane",
+        "City": "Camp Hill",
+        "State": "Pennsylvania",
+        "Zipcode": 17011,
+        "Phone": "(717) 761-2633",
+        "Fax": "(717) 761-2334",
+        "Website": "http://www.nowebsitepriceco.com"
+    }, {
+        "ID": 7,
+        "CompanyName": "Ultimate Gadget",
+        "Address": "1557 Watson Blvd",
+        "City": "Warner Robbins",
+        "State": "Georgia",
+        "Zipcode": 31093,
+        "Phone": "(995) 623-6785",
+        "Fax": "(995) 623-6786",
+        "Website": "http://www.nowebsiteultimategadget.com"
+    }, {
+        "ID": 8,
+        "CompanyName": "EZ Stop",
+        "Address": "618 Michillinda Ave.",
+        "City": "Arcadia",
+        "State": "California",
+        "Zipcode": 91007,
+        "Phone": "(626) 265-8632",
+        "Fax": "(626) 265-8633",
+        "Website": "http://www.nowebsiteezstop.com"
+    }, {
+        "ID": 9,
+        "CompanyName": "Clicker",
+        "Address": "1100 W. Artesia Blvd.",
+        "City": "Compton",
+        "State": "California",
+        "Zipcode": 90220,
+        "Phone": "(310) 884-9000",
+        "Fax": "(310) 884-9001",
+        "Website": "http://www.nowebsiteclicker.com"
+    }, {
+        "ID": 10,
+        "CompanyName": "Store of America",
+        "Address": "2401 Utah Ave. South",
+        "City": "Seattle",
+        "State": "Washington",
+        "Zipcode": 98134,
+        "Phone": "(206) 447-1575",
+        "Fax": "(206) 447-1576",
+        "Website": "http://www.nowebsiteamerica.com"
+    }, {
+        "ID": 11,
+        "CompanyName": "Zone Toys",
+        "Address": "1945 S Cienega Boulevard",
+        "City": "Los Angeles",
+        "State": "California",
+        "Zipcode": 90034,
+        "Phone": "(310) 237-5642",
+        "Fax": "(310) 237-5643",
+        "Website": "http://www.nowebsitezonetoys.com"
+    }, {
+        "ID": 12,
+        "CompanyName": "ACME",
+        "Address": "2525 E El Segundo Blvd",
+        "City": "El Segundo",
+        "State": "California",
+        "Zipcode": 90245,
+        "Phone": "(310) 536-0611",
+        "Fax": "(310) 536-0612",
+        "Website": "http://www.nowebsiteacme.com"
+    }];
+
+    var zone = {
+        loadGrid: function () {
+
+            let columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
+
+
+            fin_common.showToast(1, "loades successfully.");
+            devExHelper.bindGrid("#grid", data, columns, null, null, null, true);
+
+
+
+
+        }
+    }
+
+</script>

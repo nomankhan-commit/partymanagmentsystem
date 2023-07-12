@@ -13,5 +13,21 @@ namespace partymanagmentsystem.Controllers
         {
             return View();
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
+
+        public ActionResult edit(int id)
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //public ActionResult New()
+        //{
+        //    return View();
+        //}
     }
 }
